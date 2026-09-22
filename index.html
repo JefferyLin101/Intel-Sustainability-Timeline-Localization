@@ -49,26 +49,27 @@
     <p>Scroll to view timeline | Hover over cards to learn more!</p>
   </section>
 
-  <!-- The years can be scrolled horizontally on smaller screens. -->
-  <nav class="timeline-years" aria-label="Timeline years">
-    <div class="timeline-years-track">
-      <a href="#year-1968">1968</a>
-      <a href="#year-1971">1971</a>
-      <a href="#year-1978">1978</a>
-      <a href="#year-1985">1985</a>
-      <a href="#year-2006">2006</a>
-      <a href="#year-2020">2020</a>
-      <a href="#year-2022">2022</a>
-      <a href="#year-2023">2023</a>
-      <a href="#year-2024">2024</a>
-    </div>
-  </nav>
+  <div class="timeline-content">
+    <!-- The years can be scrolled horizontally on smaller screens. -->
+    <nav class="timeline-years" aria-label="Timeline years">
+      <div class="timeline-years-track">
+        <a href="#year-1968">1968</a>
+        <a href="#year-1971">1971</a>
+        <a href="#year-1978">1978</a>
+        <a href="#year-1985">1985</a>
+        <a href="#year-2006">2006</a>
+        <a href="#year-2020">2020</a>
+        <a href="#year-2022">2022</a>
+        <a href="#year-2023">2023</a>
+        <a href="#year-2024">2024</a>
+      </div>
+    </nav>
 
-  <!-- Timeline Cards Section -->
-  <section class="timeline-cards" aria-label="Timeline information">
-    <div class="timeline-carousel-window">
-      <button class="timeline-preview timeline-preview-previous" type="button" aria-label="Show previous timeline card"></button>
-      <div class="timeline-cards-track">
+    <!-- Timeline Cards Section -->
+    <section class="timeline-cards" aria-label="Timeline information">
+      <div class="timeline-carousel-window">
+        <button class="timeline-preview timeline-preview-previous" type="button" aria-label="Show previous timeline card"></button>
+        <div class="timeline-cards-track">
       <article class="timeline-card" id="year-1968" tabindex="0">
         <h2>1968</h2>
         <div class="timeline-card-image"><img src="img/1968.png" alt="Intel in 1968" /><p>Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.</p></div>
@@ -114,10 +115,11 @@
         <div class="timeline-card-image"><img src="img/2024.png" alt="Intel sustainability summit" /><p>Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.</p></div>
         <h3>Sustainability Summit</h3>
       </article>
+        </div>
+        <button class="timeline-preview timeline-preview-next" type="button" aria-label="Show next timeline card"></button>
       </div>
-      <button class="timeline-preview timeline-preview-next" type="button" aria-label="Show next timeline card"></button>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- New information links laid out with Bootstrap's grid. -->
   <section class="learn-more-section" aria-labelledby="learn-more-heading">
@@ -174,6 +176,15 @@
   </footer>
 
   <script>
+    const rtlLanguageCodes = new Set([
+      "ar", "dv", "fa", "he", "iw", "ku", "ps", "sd", "ur", "yi"
+    ]);
+    const detectedLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+    const detectedLanguageCode = detectedLanguage.toLowerCase().split("-")[0];
+    const isRightToLeft = rtlLanguageCodes.has(detectedLanguageCode);
+    document.documentElement.lang = detectedLanguage;
+    document.documentElement.dir = isRightToLeft ? "rtl" : "ltr";
+
     const timelineBar = document.querySelector(".timeline-years");
     const timelineLinks = [...document.querySelectorAll(".timeline-years a")];
     const timelineCards = [...document.querySelectorAll(".timeline-card")];

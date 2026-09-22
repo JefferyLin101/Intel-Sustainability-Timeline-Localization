@@ -145,6 +145,10 @@ header {
 	font-size: clamp(0.7rem, 1.3vw, 1rem);
 }
 
+.timeline-content {
+	position: relative;
+}
+
 .timeline-years {
 	position: sticky;
 	top: 0;
@@ -422,6 +426,16 @@ header {
 	background-color: var(--intel-blue);
 }
 
+.learn-more-card .btn-primary {
+	transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.learn-more-card .btn-primary:hover,
+.learn-more-card .btn-primary:focus-visible {
+	box-shadow: 0 0.35rem 0.75rem rgba(0, 40, 90, 0.25);
+	transform: translateY(-0.15rem);
+}
+
 .newsletter-section {
 	padding: 2.5rem 1rem;
 	background-color: #0163c3;
@@ -532,4 +546,59 @@ header {
 		padding: 3.75rem 7rem 3.75rem 10.3125rem;
 		z-index: 1;
 	}
+}
+
+/* Keep timeline calculations chronological while adapting readable content to RTL languages. */
+html[dir="rtl"] body {
+	direction: rtl;
+}
+
+html[dir="rtl"] .header-top,
+html[dir="rtl"] .header-bottom {
+	padding-right: 0.5vw;
+	padding-left: 0;
+}
+
+html[dir="rtl"] .hero-columns {
+	direction: rtl;
+}
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .learn-more-section,
+html[dir="rtl"] .newsletter-section {
+	direction: rtl;
+	text-align: right;
+}
+
+html[dir="rtl"] .timeline-years,
+html[dir="rtl"] .timeline-years-track,
+html[dir="rtl"] .timeline-cards-track {
+	direction: ltr;
+}
+
+html[dir="rtl"] .timeline-years a,
+html[dir="rtl"] .timeline-card {
+	direction: rtl;
+}
+
+html[dir="rtl"] .timeline-card {
+	text-align: right;
+}
+
+html[dir="rtl"] .timeline-card-image {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+html[dir="rtl"] .newsletter-section .container {
+	text-align: center;
+}
+
+html[dir="rtl"] .newsletter-section .form-control {
+	direction: rtl;
+	text-align: right;
+}
+
+html[dir="rtl"] .site-footer {
+	direction: rtl;
 }
