@@ -375,6 +375,76 @@ header {
 	outline: 1px solid var(--intel-light-blue);
 }
 
+/* The new sections use Bootstrap for their grid and form layout. */
+.learn-more-section {
+	padding: 3.5rem 0;
+	background-color: var(--pure-white);
+	color: var(--pure-black);
+}
+
+.learn-more-section h2 {
+	margin: 0 0 2rem;
+	color: var(--pure-black);
+}
+
+.learn-more-card {
+	padding: 1.5rem;
+	color: var(--pure-black);
+}
+
+.learn-more-card h3 {
+	min-height: 3rem;
+	margin: 0 0 1rem;
+	color: var(--pure-black);
+	font-size: 1.25rem;
+}
+
+.learn-more-image {
+	width: 100%;
+	height: 11rem;
+	margin-bottom: 1.25rem;
+	object-fit: contain;
+}
+
+.learn-more-card p {
+	margin-bottom: 1.5rem;
+	line-height: 1.5;
+}
+
+.learn-more-card .btn-primary {
+	border-color: var(--intel-blue);
+	background-color: var(--intel-blue);
+}
+
+.learn-more-card .btn-primary:hover,
+.learn-more-card .btn-primary:focus {
+	border-color: var(--intel-blue);
+	background-color: var(--intel-blue);
+}
+
+.newsletter-section {
+	padding: 2.5rem 1rem;
+	background-color: #0163c3;
+	color: var(--pure-white);
+}
+
+.newsletter-section h2 {
+	margin: 0 0 1.5rem;
+	color: var(--pure-white);
+	font-size: 1.5rem;
+}
+
+.site-footer {
+	height: 10.5vh;
+	min-height: 3rem;
+	background-color: #e7e7e7;
+	color: var(--pure-black);
+}
+
+.site-footer small {
+	font-size: 0.8rem;
+}
+
 @media (max-width: 56.24rem) {
 	.header-top {
 		padding-left: 3vw;
